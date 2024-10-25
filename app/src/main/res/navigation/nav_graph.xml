@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@id/cityInputFragment">
+
+    <fragment
+        android:id="@+id/cityInputFragment"
+        android:name="com.example.weatherinfo.presentation.WeatherFragment"
+        android:label="Enter City">
+    </fragment>
+
+</navigation>

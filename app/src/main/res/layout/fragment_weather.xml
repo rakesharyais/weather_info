@@ -1,0 +1,244 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Search Bar Section -->
+        <EditText
+            android:id="@+id/editTextCity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Enter City Name"
+            android:padding="12dp"
+            android:textSize="16sp"
+            android:layout_margin="16dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/buttonGetWeather" />
+
+        <Button
+            android:id="@+id/buttonGetWeather"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Get Weather"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/editTextCity"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Current City Weather Section -->
+        <TextView
+            android:id="@+id/textViewCurrentCityTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Current City Weather"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_margin="5dp"
+            app:layout_constraintTop_toBottomOf="@id/buttonGetWeather"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/textViewCurrentCityName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="City: --"
+            android:textSize="18sp"
+            android:layout_margin="5dp"
+            app:layout_constraintTop_toBottomOf="@id/textViewCurrentCityTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/textViewCurrentTemperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Temperature: -- °C"
+            android:textSize="16sp"
+            android:layout_margin="5dp"
+            app:layout_constraintTop_toBottomOf="@id/textViewCurrentCityName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="visible" />
+
+        <!-- Feels Like Temperature for Current City -->
+        <TextView
+            android:id="@+id/textViewCurrentFeelsLike"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Feels like: -- °C"
+            android:textSize="16sp"
+            android:layout_margin="5dp"
+            app:layout_constraintTop_toBottomOf="@id/textViewCurrentTemperature"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="visible" />
+
+        <!-- Min and Max Temperatures for Current City -->
+        <TextView
+            android:id="@+id/textViewCurrentMinMaxTemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Min Temp: -- °C, Max Temp: -- °C"
+            android:textSize="16sp"
+            android:layout_margin="5dp"
+            app:layout_constraintTop_toBottomOf="@id/textViewCurrentFeelsLike"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/textViewCurrentHumidity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Humidity: -- %"
+            android:textSize="16sp"
+            android:layout_margin="5dp"
+            app:layout_constraintTop_toBottomOf="@id/textViewCurrentMinMaxTemp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="visible" />
+
+        <!-- Weather Condition with ImageView Below Condition for Current City -->
+        <TextView
+            android:id="@+id/textViewCurrentCondition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Condition: --"
+            android:textSize="16sp"
+            android:layout_margin="5dp"
+            app:layout_constraintTop_toBottomOf="@id/textViewCurrentHumidity"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/imageViewCurrentWeatherIcon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_constraintTop_toBottomOf="@id/textViewCurrentCondition"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"
+            android:contentDescription="Weather Icon" />
+
+        <!-- Divider -->
+        <View
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintTop_toBottomOf="@id/imageViewCurrentWeatherIcon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="visible" />
+
+        <!-- Searched City Weather Section -->
+        <TextView
+            android:id="@+id/textViewSearchCityTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Searched City Weather"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            app:layout_constraintTop_toBottomOf="@id/divider"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="10dp"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/textViewCityName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="City: --"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/textViewSearchCityTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/textViewTemperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Temperature: -- °C"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/textViewCityName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="visible" />
+
+        <!-- Feels Like Temperature for Searched City -->
+        <TextView
+            android:id="@+id/textViewFeelsLike"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Feels like: -- °C"
+            android:textSize="16sp"
+            android:layout_margin="5dp"
+            app:layout_constraintTop_toBottomOf="@id/textViewTemperature"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="visible" />
+
+        <!-- Min and Max Temperatures for Searched City -->
+        <TextView
+            android:id="@+id/textViewMinMaxTemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Min Temp: -- °C, Max Temp: -- °C"
+            android:textSize="16sp"
+            android:layout_margin="5dp"
+            app:layout_constraintTop_toBottomOf="@id/textViewFeelsLike"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/textViewHumidity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Humidity: -- %"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/textViewMinMaxTemp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="visible" />
+
+        <!-- Weather Condition with ImageView Below Condition for Searched City -->
+        <TextView
+            android:id="@+id/textViewWeatherCondition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Condition: --"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/textViewHumidity"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/imageViewWeatherIcon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_constraintTop_toBottomOf="@id/textViewWeatherCondition"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"
+            android:contentDescription="Weather Icon"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

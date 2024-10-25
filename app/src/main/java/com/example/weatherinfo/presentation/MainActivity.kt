@@ -1,10 +1,8 @@
-package com.example.weatherinfo
+package com.example.weatherinfo.presentation
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.example.weatherinfo.R
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
